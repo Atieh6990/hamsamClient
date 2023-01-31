@@ -109,8 +109,6 @@ export default {
             query: {params: data.challenges[0], status: true},
           });
         })
-
-
     }
   }, watch: {
     active: function () {

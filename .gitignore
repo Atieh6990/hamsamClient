@@ -5,6 +5,7 @@ yarn-error.log
 dist/build.js
 dist/build.js.map
 dist/images/
+src/assets/images/
 # Editor directories and files
 .idea
 *.suo

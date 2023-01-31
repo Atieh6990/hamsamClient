@@ -1,0 +1,194 @@
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  overflow: hidden;
+}
+
+.Parent-filickty > .suggestedProgram > .flickity-viewport > .flickity-slider {
+  margin-top: 7px;
+}
+.Parent-filickty > .flickity > .flickity-viewport {
+ overflow: visible !important;
+}
+
+
+#app {
+  content: "";
+
+  /*opacity: 0.5;*/
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: fixed;
+  width: 1920px;
+  height: 1080px;
+  overflow: hidden;
+  z-index: -1;
+  background: url("http://ssn.tvapps.ir/alt2/newhamsam/images100/background.jpg");
+  /*background: url("../images/p5_@2X.png") repeat;*/
+  /*background: url("/dist/images/p5_@2X.png") repeat;*/
+
+}
+
+#msg-box-46 .iScrollVerticalScrollbar .iScrollIndicator {
+  background-color: rgb(104, 105, 107) !important;
+}
+
+div {
+  /*scroll-behavior: smooth;*/
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */
+{
+  opacity: 0;
+}
+
+.bounce-enter-active {
+  animation: bounce-in .5s;
+}
+
+.bounce-leave-active {
+  animation: bounce-in reverse;
+}
+
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@font-face {
+  font-family: 'BYekan';
+  font-weight: normal;
+  font-style: normal;
+  /*font-size: 18px;*/
+  src: url('../font/BYekan.ttf');
+}
+
+body, input, select, label, div, span, p {
+  font-family: "BYekan" !important;
+}
+
+
+img {
+  image-rendering: auto !important;
+}
+
+body {
+
+  overflow: hidden;
+}
+
+/*.log-reg-hover {*/
+/*border: 3px solid #262262 !important;*/
+/*}*/
+
+@font-face {
+  font-family: 'BYekan';
+  font-weight: normal;
+  font-style: normal;
+  /*font-size: 18px;*/
+  src: url('../font/BYekan.ttf');
+}
+
+body, input, select, label, div, span, p {
+  font-family: "BYekan" !important;
+}
+br{
+  display: none !important;
+}
+* {
+  -webkit-transform: translateZ(1);
+  -moz-transform: translateZ(1);
+  -ms-transform: translateZ(1);
+  -o-transform: translateZ(1);
+  transform: translateZ(1);
+  /*    -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;*/
+  /*    -webkit-text-size-adjust: none;
+      -moz-text-size-adjust: none;
+      -ms-text-size-adjust: none;
+      -o-text-size-adjust: none;*/
+  /*    text-size-adjust: none;*/
+  /*    text-rendering: geometricPrecisio;
+      -webkit-text-rendering: geometricPrecisio;
+      -moz-text-rendering: geometricPrecisio;
+      -ms-text-rendering: geometricPrecisio;
+      -o-text-rendering: geometricPrecisio;*/
+  /*    image-rendering: crisp-edges;
+      -webkit-image-rendering: crisp-edges;
+      image-rendering: pixelated;
+      -webkit-image-rendering: pixelated;*/
+
+}
+
+img {
+  image-rendering: auto !important;
+}
+
+.suggestedProgram > .flickity-prev-next-button.next {
+  top: 71px;
+  right: -20px !important;
+
+}
+
+.suggestedProgram > .flickity-prev-next-button.previous {
+  left: -20px !important;
+  top: 71px;
+}
+
+.suggestedProgram > .flickity-button {
+  box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.25);
+  background: #F9F9F9;
+
+}
+
+.suggestedProgram > .flickity-button > .flickity-button-icon {
+  fill: #424AB5 !important;
+}
+
+.suggestedProgram > .flickity-viewport {
+  height: 100% !important;
+}
+
+.suggestedActivity > .flickity-viewport {
+  height: 100% !important;
+}
+
+.suggestedActivity > .flickity-prev-next-button.next {
+  right: -20px !important;
+  top: 100px;
+
+}
+
+.suggestedActivity > .flickity-prev-next-button.previous {
+  left: -20px !important;
+  top: 100px;
+}
+
+.suggestedActivity > .flickity-button {
+  box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.25);
+  background: #F9F9F9;
+
+}
+
+.suggestedActivity > .flickity-button > .flickity-button-icon {
+  fill: #424AB5 !important;
+}

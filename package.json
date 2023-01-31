@@ -1,0 +1,60 @@
+{
+  "name": "vuesample",
+  "description": "A Vue.js project",
+  "version": "1.0.0",
+  "author": "alizandd@gmail.com",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
+  },
+  "dependencies": {
+    "axios": "^0.18.1",
+    "chart.js": "^2.7.3",
+    "es6-promise": "^4.2.4",
+    "node-datetime": "^2.1.2",
+    "node-sass": "^4.11.0",
+    "sass-loader": "^7.1.0",
+    "socket.io-client": "^2.2.0",
+    "v-tooltip": "^2.0.2",
+    "vee-validate": "^2.1.4",
+    "vue-analytics": "^5.16.4",
+    "vue-chartjs": "^3.4.0",
+    "vue-flickity": "^1.1.2",
+    "vue-images-loaded": "^1.1.2",
+    "vue-rate": "^2.2.0",
+
+
+    "vue-router": "^3.0.1",
+    "vue-socket.io": "^3.0.4",
+    "vue-star-rating": "^1.6.1",
+    "vue-top-progress": "^0.7.0",
+    "vue-websocket": "^0.2.3",
+    "vue2-circle-progress": "^1.2.3",
+    "vuejs-countdown-timer": "^2.0.3",
+    "vuejs-progress-bar": "^1.0.9",
+    "vuetify": "^1.5.11",
+    "vuex": "^3.1.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ],
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-stage-3": "^6.24.1",
+    "cross-env": "^5.0.5",
+    "css-loader": "^0.28.7",
+    "file-loader": "^1.1.11",
+    "jquery": "^3.3.1",
+    "vue-loader": "^13.0.5",
+    "vue-template-compiler": "^2.6.2",
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^2.9.1"
+  }
+}

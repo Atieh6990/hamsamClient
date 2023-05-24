@@ -341,8 +341,37 @@ export default {
     ,
     risponseRead(text) {
       //    console.log("tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt", text)
-    }
+    },
+    openBrowser(Url) {
+      var paramAppId = 'org.tizen.browser';
+      var paramData = {
+        url: Url,
+        info: 'samsungdpay'
+      };
+      var appCtrlDataAry = [];
+      for (var keyName in paramData) {
+        var temp = new tizen.ApplicationControlData(keyName, [paramData[keyName]]);
+        appCtrlDataAry.push(temp);
+      }
 
+      var url = Url;
+
+      var browserAppCtrl = new tizen.ApplicationControl(null, url, null, null, appCtrlDataAry);
+      tizen.application.launchAppControl(
+        browserAppCtrl,
+        paramAppId,
+        function () {
+          var text = 'Jump Browser Success';
+          console.log(text);
+        },
+        function (error) {
+          var text = 'Jump Browser Error : ' + JSON.stringify(error);
+          console.log(text);
+        },
+        null
+      );
+
+    },
 
   },
   filters: {

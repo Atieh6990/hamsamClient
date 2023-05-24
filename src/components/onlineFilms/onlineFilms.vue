@@ -1,5 +1,6 @@
 <template>
 
+<!--  <div v-if="films[0]">-->
   <div v-if="films[0]">
 
     <div class="Parent-filickty">
@@ -9,7 +10,8 @@
              :class="[xpos==index && activeRoute==1  && yActive== yPage ? 'active' : '',xpos == films.length-1&& activeRoute==1 && yActive== yPage ? 'ml&#45;&#45;33' : '',xpos == 0&& activeRoute==1  && yActive== yPage ? 'ml-0' : '',
              'carousel-cell' ,(index == 0)? 'removeMargin':'' ]"
         >
-          <img class="img" :src=item.avatar>
+<!--          <img class="img" :src=item.avatar>-->
+          <img class="img" :src=item.PortraitImage9X11>
 
         </div>
 

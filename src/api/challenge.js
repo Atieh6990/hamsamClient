@@ -3,6 +3,18 @@ import axiosback from './ajax'
 import axios from 'axios';
 
 export default {
+  topChallenge(){
+    // console.log("injaaaaaaaaaaaaaaa")
+    let Url = ROAST_CONFIG.URL_Newssn + 'challenge/top';
+    return axios({
+      method: "POST",
+      url: Url
+    }).then(response => {
+      return response['data']
+      // this.challenges = response['data']['data'].reverse();
+      // console.log('data login ->' + JSON.stringify(response));
+    });
+  },
 
   getChallenges(id) {
     return axios({

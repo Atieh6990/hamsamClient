@@ -18,7 +18,7 @@ var url_Img_server = 'http://ssn.tvapps.ir/hamsamClient/3.0/images/'//../assets/
 var url_Domain = 'http://ssn.tvapps.ir/'
 var digiToon_url = 'https://apitwo.digitoon.ir/partner/'
 var digitoonToken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhIjoxMjE5NjQ2NiwiYiI6MTMxMjQxMTgsImMiOjEsImV4cCI6MTY3NDk5ODQ1OSwiaWF0IjoxNjY3MjIyNDU5fQ.AR67fDd0pO-6smtc2Yza2xbiSst0N2iSjEWWzgtTdN4'
-
+var gapFilmUrl = 'https://rapidcore.gapfilm.ir/api/v1/'
 
 switch (process.env.NODE_ENV) {
   case 'development':
@@ -37,7 +37,7 @@ export const ROAST_CONFIG = {
   URL_Oldssn: url_Oldssn,
   URL_GAMECENTER: url_Gamecenter,
   URL_FORECAST: url_forecast,
-  isDevelopement:0,
+  isDevelopement:1,
   New_Url_Laravel: New_Url_Laravel,
   URL_Newssn: url_Newssn,
   url_Img_comp: url_Img_comp,
@@ -48,5 +48,6 @@ export const ROAST_CONFIG = {
   url_Img_server: url_Img_server,
   url_Domain: url_Domain,
   digiToon_url:digiToon_url,
-  digitoonToken:digitoonToken
+  digitoonToken:digitoonToken,
+  gapFilm_Url:gapFilmUrl
 }

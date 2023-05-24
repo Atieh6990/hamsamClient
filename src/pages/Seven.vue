@@ -323,7 +323,7 @@ export default {
       FileName: "samsung-TK",
       isFile: 0,
       FileSelected: "",
-      modeDebug: false,
+      modeDebug: true,
       fromSabtnam: this.$route.query
     }
   },
@@ -389,8 +389,8 @@ export default {
       }
       this.errorlogin = [];
       //
-      // this.Phone2 = '09102383575',
-      //   this.Key2 = 'randh',
+      this.Phone2 = '09102383575',
+        this.Key2 = 'randh',
 
         // this.Phone2 = '09354596624',
         // this.Key2 = '54fiH',
@@ -402,8 +402,8 @@ export default {
         // this.Phone2 = '09124703854',
         //   this.Key2 = 'FGZjxZ',
 
-        this.Phone2 = '',
-        this.Key2 = '',
+        // this.Phone2 = '',
+        // this.Key2 = '',
 
         this.Key4 = '',
 

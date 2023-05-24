@@ -12,25 +12,25 @@
 
 
     <!-- digitoon be bug khorde ->(11.11.1401)-->
-    <!--    <div class="Title">-->
-    <!--      <span style="float: right;line-height: 36px">تماشای آنلاین فیلم و سریال</span>-->
-    <!--      <img style="float: left ;width: 40px; margin-right: 10px" :src="(imgURL)">-->
-    <!--    </div>-->
-    <!--    <onlineFilms :films="films" :xActive="0" :yActive="2" :activeRoute="activeRoute"-->
-    <!--                 :yPage="yPage" :xPage="xPage" ref="onlineFilms"></onlineFilms>-->
-    <!--    <onlineFilms :films="films" class="Parent-filickty" :xActive="0" :yActive="3" :activeRoute="activeRoute"-->
-    <!--                 :yPage="yPage" :xPage="xPage" ref="onlineFilms"></onlineFilms>-->
+    <div class="Title">
+      <span style="float: right;line-height: 36px">تماشای آنلاین فیلم و سریال</span>
+      <img style="float: left ;width: 40px; margin-right: 10px" :src="(imgURL)">
+    </div>
+    <onlineFilms :films="films" :xActive="0" :yActive="2" :activeRoute="activeRoute"
+                 :yPage="yPage" :xPage="xPage" ref="onlineFilms"></onlineFilms>
+    <!--        <onlineFilms :films="films" class="Parent-filickty" :xActive="0" :yActive="3" :activeRoute="activeRoute"-->
+    <!--                     :yPage="yPage" :xPage="xPage" ref="onlineFilms"></onlineFilms>-->
 
-    <div class="Title" style="  top: 625px;"> فعالیت های پیشنهادی</div>
-    <SugestedActivity :challenges="challenges" :xActive="0" :yActive="2" :activeRoute="activeRoute" :yPage="yPage"
+    <div class="Title" style=" top: 885px;"> فعالیت های پیشنهادی</div>
+    <SugestedActivity :challenges="challenges" :xActive="0" :yActive="3" :activeRoute="activeRoute" :yPage="yPage"
                       :xPage="xPage"
                       ref="SugestedActivity">
     </SugestedActivity>
 
-    <div class="Title" style="  top: 850px;"> برنامه های پیشنهادی</div>
-    <SugestedProgram :programs="apps" :xActive="0" :yActive="3" :activeRoute="activeRoute"
-                     :yPage="yPage" :xPage="xPage" ref="SugestedProgram">
-    </SugestedProgram>
+    <!--    <div class="Title" style="  top: 885px;"> برنامه های پیشنهادی</div>-->
+    <!--    <SugestedProgram :programs="apps" :xActive="0" :yActive="3" :activeRoute="activeRoute"-->
+    <!--                     :yPage="yPage" :xPage="xPage" ref="SugestedProgram">-->
+    <!--    </SugestedProgram>-->
 
 
     <!--<guide ref="guide"></guide>-->
@@ -67,7 +67,7 @@ export default {
       activeRoute: 1,
       yPage: 0,
       xPage: 0,
-      apps: [],
+      // apps: [],
       dataNews: [],
       item: '',
       year: '',
@@ -102,10 +102,13 @@ export default {
     this.old = this.info['isOld'];
 
     //dar tarikh 12.9.1401 hazf shod
-    api.topApps(this.year, this.old).then(data => {
-      this.apps = data['data'];
-    });
+    // api.topApps(this.year, this.old).then(data => {
+    //   this.apps = data['data'];
+    // });
 
+    filmsApi.gapFilms(0, 10 ).then(data => {
+      this.films = data['Data']
+    })
 
     //digitoon be bug khorde ->(11.11.1401)
     // filmsApi.productList(10, 0).then(data => {
@@ -113,16 +116,9 @@ export default {
     //   // console.log(this.films)
     // })
 
-
-    let Url = ROAST_CONFIG.URL_Newssn + 'challenge/top';
-    return axios({
-      method: "POST",
-      url: Url
-
-    }).then(response => {
-      this.challenges = response['data']['data'].reverse();
-      // console.log('data login aio->' + JSON.stringify(data));
-    });
+    challenge.topChallenge().then(data => {
+      this.challenges = data['data'].reverse();
+    })
 
 
   }, components: {
@@ -143,40 +139,40 @@ export default {
 
 
     }, down() {
-      console.log(this.yPage + ' ' + this.xPage);
+      // console.log(this.yPage + ' ' + this.xPage);
       if (this.yPage == 0 && this.xPage == 2) {
         if (!this.$refs.tv.down()) {
           this.yPage++
         }
-      // } else if (this.yPage < 4) { digitoon be bug khorde ->(11.11.1401)
+        // } else if (this.yPage < 4) { digitoon be bug khorde ->(11.11.1401)
       } else if (this.yPage != 3) {
         this.yPage++
       }
 
     }, left() {
-      console.log(this.yPage, this.xPage)
+      // console.log(this.yPage, this.xPage)
       if (this.yPage == 0 && this.xPage == 2) {
         if (!this.$refs.tv.left()) {
 
           this.removeOverL()
         }
       } else if (this.yPage == 2) {
-        if (!this.$refs.SugestedActivity.left()) {
-          this.removeOverL()
-        }
-
-        //digitoon be bug khorde ->(11.11.1401)
-        // if (!this.$refs.onlineFilms.left()) {
-        //   this.removeOverL()
-        // }
-      } else if (this.yPage == 3) {
-        if (!this.$refs.SugestedProgram.left()) {
-          this.removeOverL()
-        }
-        //digitoon be bug khorde ->(11.11.1401)
         // if (!this.$refs.SugestedActivity.left()) {
         //   this.removeOverL()
         // }
+
+
+        if (!this.$refs.onlineFilms.left()) {
+          this.removeOverL()
+        }
+      } else if (this.yPage == 3) {
+        // if (!this.$refs.SugestedProgram.left()) {
+        //   this.removeOverL()
+        // }
+
+        if (!this.$refs.SugestedActivity.left()) {
+          this.removeOverL()
+        }
 
 
         // } else if (this.xPage != 2 ) {
@@ -191,21 +187,21 @@ export default {
     }, right() {
       // alert(this.yPage)
       if (this.yPage == 2) {
-        //digitoon be bug khorde ->(11.11.1401)
-        // if (!this.$refs.onlineFilms.right()) {
-        //   this.removeOverR()
-        // }
-        if (!this.$refs.SugestedActivity.right()) {
+
+        if (!this.$refs.onlineFilms.right()) {
           this.removeOverR()
         }
-      } else if (this.yPage == 3) {
-        //digitoon be bug khorde ->(11.11.1401)
         // if (!this.$refs.SugestedActivity.right()) {
         //   this.removeOverR()
         // }
-        if (!this.$refs.SugestedProgram.right()) {
+      } else if (this.yPage == 3) {
+
+        if (!this.$refs.SugestedActivity.right()) {
           this.removeOverR()
         }
+        // if (!this.$refs.SugestedProgram.right()) {
+        //   this.removeOverR()
+        // }
 
       } else {
         if (this.xPage == 0) {
@@ -255,27 +251,26 @@ export default {
       } else if (this.yPage == 1 && this.xPage == 2) {
         this.$refs.rank.enter()
       } else if (this.yPage == 2) {
-        this.$refs.SugestedActivity.enter()
-
-        //digitoon be bug khorde ->(11.11.1401)
-        // let filmSelect = this.$refs.onlineFilms.enter();
+        // this.$refs.SugestedActivity.enter()
+        let filmSelect = this.$refs.onlineFilms.enter();
         // let filmId = this.films[filmSelect].id
-        //
-        // page({
-        //   page: 'Films p1' + filmId,
-        //   title: 'Films p1' + filmId
-        // })
-        //
-        //
-        // this.$router.push({
-        //   path: '/videoDetails/' + time,
-        //   query: {'filmId': filmId, 'films': this.films}
-        // })
+        let filmId = this.films[filmSelect].ContentID
+
+        page({
+          page: 'Films p1' + filmId,
+          title: 'Films p1' + filmId
+        })
+
+
+        this.$router.push({
+          // path: '/videoDetails/' + time,
+          path: '/gapFilmsDetail/' + time,
+          query: {'filmId': filmId, 'films': this.films[filmSelect]}
+        })
 
       } else if (this.yPage == 3) {
-        //digitoon be bug khorde ->(11.11.1401)
-        //this.$refs.SugestedActivity.enter()
-        this.$refs.SugestedProgram.enter()
+        this.$refs.SugestedActivity.enter()
+        // this.$refs.SugestedProgram.enter()
       }
 
     }, removeOverR() {
@@ -354,7 +349,7 @@ export default {
   line-height: normal;
   font-size: 18px;
   color: #A9A9A9;
-
+  top: 600px
 }
 
 </style>

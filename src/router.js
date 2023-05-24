@@ -27,6 +27,7 @@ import TwentyThree from './pages/TwentyThree'
 import TwentyFour from './pages/TwentyFour'
 import Worldcup from './pages/Worldcup'
 import videoDetails from './pages/videoDetails'
+import gapFilmsDetail from './pages/gapFilmsDetail'
 
 Vue.use(Router);
 
@@ -183,6 +184,11 @@ export default new Router({
         path: '/videoDetails/:time',//videoDetails
         name: 'videoDetails',
         component: videoDetails
+      },
+      {
+        path: '/gapFilmsDetail/:time',//gapFilmsDetail
+        name: 'gapFilmsDetail',
+        component: gapFilmsDetail
       },
     ]
 })

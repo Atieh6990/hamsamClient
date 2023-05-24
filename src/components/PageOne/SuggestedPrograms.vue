@@ -141,7 +141,7 @@ export default {
 
 .Parent-filickty {
 
-  top: 885px;
+  top: 900px;
   height: 176px;
   width: 1758px;
   position: absolute;

@@ -106,7 +106,7 @@ export default {
     //   this.apps = data['data'];
     // });
 
-    filmsApi.gapFilms(0, 10 ).then(data => {
+    filmsApi.gapFilms(0, 10).then(data => {
       this.films = data['Data']
     })
 
